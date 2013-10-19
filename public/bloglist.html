@@ -1,6 +1,6 @@
 <div class="heading">My blogs</div>
 <ul>
-	<li ng-repeat="blog in blogs">
+	<li ng-repeat="blog in blogs" ng-controller="BlogListCtrl">
 		<a href="#">{{blog.title}}</a>
 	</li>
 </ul>
