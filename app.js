@@ -1,3 +1,5 @@
+/* My blog application */
+
 var express = require("express");
 
 var app = express();
