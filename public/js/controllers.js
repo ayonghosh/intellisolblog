@@ -21,11 +21,11 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 
 intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$http', 
 	function BlogCtrl($scope, $routeParams, $http) {
-		console.log('hi');
-		console.log($routeParams.blogId);
+		var blogId = $routeParams.blogId.substring(1);
+		console.log(blogId);
 		$.ajax(
 		{
-			url:'http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq&id=' + $routeParams.blogId,
+			url:'http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq&id=' + blogId,
 			dataType: 'jsonp',
 			success: function(data) {
 				if (typeof data == 'string') {
