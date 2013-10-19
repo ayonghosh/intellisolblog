@@ -1,4 +1,4 @@
-var intelliSolBlogApp = angular.module('intelliSolBlogApp', ['ngRoute', 'blogControllers']);
+var intelliSolBlogApp = angular.module('intelliSolBlogApp', ['ngRoute', 'blogControllers', 'ngSanitize']);
 
 intelliSolBlogApp.config(['$routeProvider', 
 	function($routeProvider) {
