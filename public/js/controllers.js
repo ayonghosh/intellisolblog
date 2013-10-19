@@ -19,7 +19,7 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 	}
 ]);
 
-intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$http'
+intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$http', 
 	function($scope, $routeParams, $http) {
 		$.ajax(
 		{
