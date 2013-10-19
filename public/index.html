@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="intelliSolBlogApp">
+<html lang="en" ng-app="intelliSolBlogApp">
 	<head>
 		<title>intelliSol</title>
 		
@@ -48,6 +48,13 @@
 			-->
 			<!--<div class="innercircle orange"></div>-->
 			<div class="content" id="content">
+				
+				<ul>
+	<li ng-repeat="blog in blogs">
+		<a href="#/blogs/">{{blog.title}}</a>
+	</li>
+</ul>
+				
 				<div ng-view></div>
 				<!--
 				<div class="heading">My blog</div>

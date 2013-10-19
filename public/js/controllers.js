@@ -17,8 +17,8 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 	}
 ]);
 
-intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$http', 
-	function BlogCtrl($scope, $http) {
+intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', 
+	function($scope, $routeParams) {
 		// TODO 
 	}
 ])
