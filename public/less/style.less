@@ -37,8 +37,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  //background-color: @bg;
-  .gradient(@bg, @bg2);
+  background-color: @bg;
+  //.gradient(@bg, @bg2);
   height: 100%;
 }
 
@@ -110,7 +110,9 @@ body {
 }
 
 .date {
+  margin-top: 50px;
   font-size: 9pt;
+  margin-bottom: 20px;
 }
 
 #about {
@@ -201,3 +203,11 @@ a {
   //color: white;
 }
 
+.footer {
+  color: @bg2;
+  position: fixed;
+  left: 20px;
+  bottom: 10px;
+  font-family: 'Open Sans', 'Arial';
+  font-size: 10pt;
+}

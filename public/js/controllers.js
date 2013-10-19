@@ -4,7 +4,7 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 	function BlogListCtrl($scope, $http) {
 		$.ajax(
 		{
-			url:'http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq',
+			url:'http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq&type=text',
 			dataType: 'jsonp',
 			success: function(data) {
 				if (typeof data == 'string') {
@@ -22,7 +22,6 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$http', 
 	function BlogCtrl($scope, $routeParams, $http) {
 		var blogId = $routeParams.blogId.substring(1);
-		console.log(blogId);
 		$.ajax(
 		{
 			url:'http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq&id=' + blogId,
@@ -32,11 +31,11 @@ intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$ht
 					data = JSON.parse(data);
 				}
 				
-				console.log(data);
 				// Because using jQuery ajax is out of the world of angular, we need to wrap our $scope assignment inside:
 				$scope.$apply(function(){
 					$scope.title = data.response.posts[0].title;
 				    $scope.text = data.response.posts[0].body;
+				    $scope.date = data.response.posts[0].date;
 				});
 			}
 		});
