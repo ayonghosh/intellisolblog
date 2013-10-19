@@ -10,8 +10,8 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 				if (typeof data == 'string') {
 					data = JSON.parse(data);
 				}
-				console.log(data.response.posts);
 				$scope.blogs = data.response.posts;
+				console.log($scope.blogs);
 			}
 		});
 	}
