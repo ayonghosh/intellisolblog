@@ -14,7 +14,7 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 				console.log($scope.blogs);
 			}
 		});*/
-		 $http.get('http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq').success(function(data) {
+		 $http.jsonp('http://api.tumblr.com/v2/blog/intellisol.tumblr.com/posts?api_key=T87SJzAER6jBO2qpIkDcvgqxMxTTZ3KClAQL04uJZJ0I878USq&?callback=JSON_CALLBACK').success(function(data) {
 		 	$scope.blogs = data.response.posts;
 		 });
 	}
