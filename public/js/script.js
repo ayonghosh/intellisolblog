@@ -20,5 +20,4 @@ app.getPosts = function() {
 
 
 // get all blog posts
-console.log("get");
 app.getPosts();
