@@ -33,4 +33,4 @@ blogApp.showPostIndex = function() {
 }
 
 // get all blog posts
-blogApp.getPosts();
+//blogApp.getPosts();
