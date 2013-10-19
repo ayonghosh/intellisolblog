@@ -10,7 +10,15 @@ intelliSolBlogControllers.controller('BlogListCtrl', ['$scope', '$http',
 				if (typeof data == 'string') {
 					data = JSON.parse(data);
 				}
-				$scope.blogs = data.response.posts;
+				//$scope.blogs = data.response.posts;
+				$scope.blogs = [
+				    {'title': 'Nexus S',
+				     'snippet': 'Fast just got faster with Nexus S.'},
+				    {'title': 'Motorola XOOM™ with Wi-Fi',
+				     'snippet': 'The Next, Next Generation tablet.'},
+				    {'title': 'MOTOROLA XOOM™',
+				     'snippet': 'The Next, Next Generation tablet.'}
+				  ];
 				console.log($scope.blogs);
 			}
 		});
