@@ -34,7 +34,7 @@ intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$ht
 				// Because using jQuery ajax is out of the world of angular, we need to wrap our $scope assignment inside:
 				$scope.$apply(function(){
 					$scope.title = data.response.posts[0].title;
-				    $scope.text = data.response.posts[0].body.substring(1);
+				    $scope.text = data.response.posts[0].body;
 				    $scope.date = data.response.posts[0].date;
 				});
 			}
