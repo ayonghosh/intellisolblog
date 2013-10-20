@@ -10,8 +10,20 @@ intelliSolBlogApp.config(['$routeProvider',
 			templateUrl: 'blog.html', 
 			controller: 'BlogCtrl'
 		}).
+		when('/about', {
+			templateUrl: 'about.html', 
+			controller: 'AboutCtrl'
+		}).
 		otherwise({
 			redirectTo: '/blogs'
 		});
 	}
 ]);
+
+// Enable CORS (doesn't work)
+/*
+intelliSolBlogApp.config(['$httpProvider', function($httpProvider) {
+	$httpProvider.defaults.useXDomain = true;
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}]);
+*/

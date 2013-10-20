@@ -99,7 +99,7 @@ body {
   display: inline-block;
   /*width: 50%;*/
   text-align: justify;
-  font-family: 'Open Sans', 'Arial';
+  font-family: 'Lato', 'Arial', sans-serif;
   font-weight: 300;
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .date {
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 9pt;
   margin-bottom: 20px;
 }
@@ -150,9 +150,11 @@ body {
   float: left;
   margin-left: 10px;
   top: (@aboutradius - @imgradius) / 2;
+  z-index: 1000;
 }
 
-.me:hover {
+
+.me img:hover {
   -webkit-filter: sepia(100%);
 }
 
@@ -160,6 +162,7 @@ body {
   position: relative;
   font-family: 'Open Sans', 'Arial';
   font-size: 10pt;
+  font-weight: 300;
   top: @aboutradius / 3 - 10px;
   padding: 10px;
 }
@@ -210,4 +213,5 @@ a {
   bottom: 10px;
   font-family: 'Open Sans', 'Arial';
   font-size: 10pt;
+  z-index: 1999;
 }

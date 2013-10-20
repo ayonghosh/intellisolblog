@@ -40,4 +40,10 @@ intelliSolBlogControllers.controller('BlogCtrl', ['$scope', '$routeParams', '$ht
 			}
 		});
 	}
-])
+]);
+
+intelliSolBlogControllers.controller('AboutCtrl', ['$scope', '$http', 
+	function AboutCtrl($scope, $http) {
+		// static content
+	}
+]);
