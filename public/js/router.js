@@ -15,7 +15,7 @@ intelliSolBlogApp.config(['$routeProvider',
 			controller: 'AboutCtrl'
 		}).
 		otherwise({
-			redirectTo: '/blogs'
+			redirectTo: '/about'
 		});
 	}
 ]);
