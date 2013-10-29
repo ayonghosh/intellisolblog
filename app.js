@@ -11,6 +11,10 @@ app.get('/', function(request, response) {
   response.sendfile('public/index.html');
 });
 
+app.get('/clock', function(request, response) {
+	response.sendFile('public/clock.html');
+});
+
 /*
 app.get('/names', function(req, res) {
     res.send([{name:'Natacha Atlas'}, {name:'Cyrine Abdelnour'}, {name:'Amr Diab'}]);
