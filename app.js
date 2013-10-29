@@ -8,12 +8,14 @@ app.use('/images', express.static('public/images'));
 app.use('/', express.static('public/'));
 
 app.get('/', function(request, response) {
-  response.sendfile('public/index.html');
+	response.sendfile('public/index.html');
 });
 
+/*
 app.get('/clock', function(request, response) {
 	response.sendFile('public/clock.html');
 });
+*/
 
 /*
 app.get('/names', function(req, res) {
@@ -23,6 +25,6 @@ app.get('/names', function(req, res) {
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
-  console.log("Listening on " + port);
+	console.log("Listening on " + port);
 });
 
