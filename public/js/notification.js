@@ -56,6 +56,12 @@ var Notification = function (iconUrl, title, body) {
 	
 	// handle general click events on notification
 	this.addEventHandler(this.el, 'click', function (evt) {
+		// prevent 'click' bubbling
+		if (evt.stopPropagation) {
+			evt.stopPropagation();
+		}else {
+			evt.cancelBubble = true;
+		}
 		if (_this.onclick) {
 			_this.onclick();
 		}
@@ -120,6 +126,7 @@ Notification.prototype.show = function () {
 Notification.prototype.cancel = function () {
 	//this.close();
 	// destroy
+	document.body.removeChild(this.el);
 	this.el = null;
 };
 
@@ -171,7 +178,6 @@ var notifications = function () {
 	
 	// the notification queue
 	var q = {};
-	var qlength = 0;
 	// notification count
 	var ncount = 0;
 
@@ -180,7 +186,7 @@ var notifications = function () {
 		var note = new Notification(iconUrl, title, body);
 		// push to queue
 		q[note.id] = note;
-		qlength++;
+		ncount++;
 		
 		return note;
 	};
@@ -200,7 +206,7 @@ var notifications = function () {
 	function remove(id) {
 		// delete notification
 		delete q[id];
-		qlength--;
+		ncount--;
 		
 		// drop all notifications above
 		// the currently deleted one
@@ -213,7 +219,7 @@ var notifications = function () {
 	};
 	
 	function getCount() {
-		return qlength;
+		return ncount;
 	};
 	
 	// public API
